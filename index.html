@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess number</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="box">
+            <center>
+            <h1 id="title">Number Guessing Application</h1>
+            <h3>Rules:</h3>
+        </center>
+        <ul id="list">
+            <li>Select a number from 1 to 100</li>
+            <li>Click on the Check Button</li>
+            <li>It will give you a hint to guess the number correctly</li>
+            <li>Repeat the same step until you find the number</li>
+        </ul>
+        <center>
+            <input type="number" id="input">
+            <div id="clue">
+                <h2>clue</h2>
+            </div>
+            <h2 id="attempt">Attempt: 0</h2>
+            <p id="result">You are wrong/right</p>
+        </center>
+        <button type="submit" id="check" onclick="check()">CHECK</button>
+        <button type="reset" id="reset" onclick="reset()">RESET</button>
+    </div>
+    <script>
+        var guessnumber = document.getElementById("input");
+        var result = document.getElementById("result");
+        var attempt = document.getElementById("attempt");
+        var clue=document.getElementById("clue");
+        var randomnumber = Math.floor(Math.random() * 10) + 1;
+        var attemptvalue = 0;
+
+        function check() {
+            console.log(randomnumber);
+            var enterednumber = parseInt(guessnumber.value);
+            if (randomnumber == enterednumber) {
+                console.log("Right");
+                result.textContent = "Right";
+                alert("You won the game!");
+            } 
+             else {
+                attemptvalue = attemptvalue + 1;
+                attempt.textContent = "Attempts: " + attemptvalue;
+                result.textContent = "Wrong";
+            }
+            if(enterednumber<randomnumber){
+                   clue.textContent="enter the larger number";
+            }
+            if(enterednumber>randomnumber){
+                    clue.textContent="enter the smaller number";
+            }
+        }
+        function reset(){
+            guessnumber.value = "";
+            result.textContent = "You are wrong/right";
+            attempt.textContent = "Attempt: 0";
+            clue.textContent = "Clue";
+            attempts = 0;
+        }
+    </script>
+    </body>
+    </html>

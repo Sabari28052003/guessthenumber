@@ -1,0 +1,51 @@
+.box{
+    background-color: rgb(241, 193, 98);
+    height: 550px;
+    width: 700px;
+    margin-left: 30%;
+    margin-top: 8%;
+}
+#list{
+    padding-left: 30%;
+}
+#title{
+    padding-top: 20px;
+    background-color: black;
+    color: white;
+    padding-bottom: 20px;
+}
+#input{
+    width: 50%;
+    height: 40px;
+    margin-top: 4%;
+    font-size: larger;
+}
+#clue{
+    background-color: darkgrey;
+    height: 30px;
+    width: 70%;
+    margin-top: 10px;
+    font-size: larger;
+    padding: 10px;
+}
+#check,#reset{
+    width: 40%;
+    height: 40px;
+    margin-left: 20px;
+
+    font-size:large;
+}
+#check{
+    margin-left: 70px;
+}
+#check:hover{
+    background-color: black;
+    color: white;
+}
+#reset:hover{
+    background-color: black;
+    color: white;
+}
+#attempt{
+    padding-top: 20px;
+}
